@@ -122,6 +122,84 @@ In this project, I will set up and establish a connection between two virtual ma
     - Mac Users download <a href="https://apps.apple.com/us/app/windows-app/id1295203466?mt=12" target="_blank" rel="noopener noreferrer">Windows App</a> Formerly known as "Microsoft Remote Desktop"
     - Windows Users open and use Remote Desktop
 - Select "Add PC"
+- Enter the Public IP Address from your Domain Controller "172.187.161.247"
+- Add a friendly name "dc-1"
 - Choose "Add Credentials" from the drop down and enter the credentials you created earlier, noting to accept the security prompt and proceed
 - You can now establish a remote connection to your virtual machine, by right-clicking the newly added device
+- Accept the Certificate when prompted to do so
+
+<img width="805" alt="Add PC" src="https://github.com/user-attachments/assets/e09feb93-0683-4729-807d-6deb026f19f4" />
+
+<img width="757" alt="Enter Credentials" src="https://github.com/user-attachments/assets/1f3a71fe-af5a-4a84-a175-9d099f3bf24a" />
+
+<img width="798" alt="Accept Certificate" src="https://github.com/user-attachments/assets/28647a74-7e14-4e2e-82ad-0c20a7435d60" />
+
+
+<h3><img alt= "windows logo" src="https://i.imgur.com/KcrV0u6.png" width="20">  Step 7: Windows Defender & Firewall</h3>
+
+- Now that you've established the remote connection, within your windows virtual machine (dc-1), open up the Run application and enter "wf.msc"
+
+<img width="759" alt="wf.msc" src="https://github.com/user-attachments/assets/64de40c0-e5a7-44a8-9528-3fc0c6ac7ae7" />
+  
+- This will open up "Windows Defender" from here you need to disable the following fireawall states:
+    - Domain Profile
+    - Private Profile
+    - Public Profile
+ 
+<img width="826" alt="Disable Profiles" src="https://github.com/user-attachments/assets/89e5d480-3655-4f6e-aafd-b0b986e9cdd3" />
+
+<h3><img alt= "windows logo" src="https://i.imgur.com/KcrV0u6.png" width="20">  Step 8: Configure client-1's DNS settings</h3>
+
+- Go to [Portal.azure.com](https://portal.azure.com)
+- Select your "client-1" Virtual Machine
+- Open the Networking section and expand the Network Settings menu
+- Open the configuration window
+- Select DNS Servers
+- Choose Custom and enter the private IP address from your domain controller "10.0.0.4"
+- Save the changes
+- Restart your "client-1" Virtual Machine
+
+<img width="921" alt="DNS Server" src="https://github.com/user-attachments/assets/c3ac885a-df0f-4d76-91ce-f1af7b3d0965" />
+
+
+
+<h3><img alt= "RDP logo" src="https://github.com/user-attachments/assets/4aaa5d6e-ce8b-481f-a8da-57edc9a2917e" width="20"> Step 9: Establish Remote Desktop Connection</h3>
+
+- Launch your Remote Desktop Connection Application
+    - Mac Users download <a href="https://apps.apple.com/us/app/windows-app/id1295203466?mt=12" target="_blank" rel="noopener noreferrer">Windows App</a> Formerly known as "Microsoft Remote Desktop"
+    - Windows Users open and use Remote Desktop
+- Select "Add PC"
+- Enter the Public IP Address from your "Client-1" "20.39.216.95"
+- Add a friendly name "Client-1"
+- Choose "Add Credentials" from the drop down and enter the credentials you created earlier, noting to accept the security prompt and proceed
+- You can now establish a remote connection to your virtual machine, by right-clicking the newly added device
+- Accept the Certificate when prompted to do so
+
+<img width="798" alt="Add PC" src="https://github.com/user-attachments/assets/564b5c73-228a-4999-b600-e3da694a3dd0" />
+<img width="810" alt="Log in" src="https://github.com/user-attachments/assets/baa78d97-300b-407e-b7e5-92c23471e822" />
+<img width="859" alt="Certificate" src="https://github.com/user-attachments/assets/dc3598ef-4f0e-4dd2-8eaf-6667e551aaba" />
+
+<h3>Step 10: Confirm Correct DNS Configuration</h3>
+
+- Now that you've established the remote connection, within your windows Virtual Machine (client-1), open up the Run application and enter "powershell"
+- Attempt to ping the Domain Controllers private IP address "10.0.0.4"
+- Atfer the ping succeeds run the "ipconfig /all" command
+- If successful the DNS Servers should display as "10.0.04" 
+
+<img width="826" alt="Ping" src="https://github.com/user-attachments/assets/6b066fb5-5349-4f5e-a151-5e1649100621" />
+<img width="832" alt="IP /configall" src="https://github.com/user-attachments/assets/f823bf08-ed9b-4f95-97e3-b901466f8904" />
+
+
+<h1>Project Summary</h1></p>
+
+🎉Congratulations! You have succesfully deployed a Virtual Network in Azure!🎉
+
+In this project, we configured and deployed a Windows Server 2022 Virtual Machine as a Domain Controller and a Windows 10 Pro Virtual Machine as a Client within a Microsoft Azure environment.
+We established remote desktop connections (RDP) to both VMs and configured DNS settings on the client to connect it to the domain controller.
+Additionally, we assigned a static private IP address to the domain controller, disabled Windows Defender firewall profiles, and verified network connectivity using PowerShell by successfully pinging the domain controller from the client.
+
+
+
+
+
 
