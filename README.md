@@ -5,16 +5,17 @@
 <h1>Active Directory: Virtual Machine Deployment</h1>
 
 <p>
-This project is the second amongst a collection focused on implementing Azure and Active Directory. 
-Microsoft Azure is a cloud platform that will let you rent space to store or process your own data.
-In this project, I will set up and establish a connection between two virtual machines using Windows 10 Pro and Windows Server 2022 in Microsoft Azure's Cloud environment. 
+This project is the first amongst a collection focused on implementing Azure and Active Directory. 
+The goal here is to create a basic lab that mirrors a real working network environment, providing me with hands-on-learning and practical experience with Microsoft Azure and Active Directory.
+In this project, I will set up and establish a connection between two virtual machines using Windows Server 2022 and Windows Pro 10 in Microsoft Azure's Cloud environment. 
+This will allow me to establish a Domain Controller and a Client.
 </p>
 
 <h2>Key Objectives</h2>
 <h3>Virtual Machine Setup</h3>
 
--  Configure and deploy Windows Client
--  Configure and deploy Windows Domain Controller
+- Configure and deploy Windows Client
+- Configure and deploy Windows Domain Controller
 
 <p>
   <h3>Remote Connectivity</h3>
