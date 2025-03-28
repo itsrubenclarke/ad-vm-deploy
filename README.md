@@ -6,9 +6,9 @@
 
 <p>
 This project is the first among a collection focused on implementing Azure and Active Directory. 
-The goal is to create a basic lab that mirrors a real working network environment, providing me with hands-on-learning and practical experience with Microsoft Azure and Active Directory.
+The goal is to create a basic lab that mirrors a real working network environment, providing me with hands-on learning and practical experience with Microsoft Azure and Active Directory.
 In this project, I will set up and establish a connection between two virtual machines using Windows Server 2022 and Windows Pro 10 in Microsoft Azure's Cloud environment. 
-Asign a static private IP, disable Windows Defender firewalls, and ensuring network connectivity through DNS configuration and PowerShell verification
+Assign a static private IP, disable Windows Defender firewalls, and ensuring network connectivity through DNS configuration and PowerShell verification
 This will allow me to establish a Domain Controller and a Client.
 </p>
 
